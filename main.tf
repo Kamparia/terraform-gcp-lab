@@ -12,13 +12,13 @@ resource "random_id" "instance_id" {
 
 // A single Compute Engine instance with Debian Linux OS
 resource "google_compute_instance" "default" {
-    name         = "apache-vm-${random_id.instance_id.hex}"
+    name         = "webserver-vm-${random_id.instance_id.hex}"
     machine_type = "e2-micro"
     zone         = "us-central1-a"
 
     boot_disk {
         initialize_params {
-            image = "debian-cloud/debian-9"
+            image = "debian-cloud/debian-11"
         }
     }
 
